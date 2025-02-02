@@ -1,11 +1,14 @@
 const express = require("express");
 const app = express();
 const db = require("./db");
+require('dotenv').config();
 
 //body-parser middleware to convert data in json format
 
 const bodyParser = require("body-parser");
 app.use(bodyParser.json()); //req.body
+
+const PORT=process.env.PORT||3000;
 
 
 const MenuItem = require("./MenuItems");
